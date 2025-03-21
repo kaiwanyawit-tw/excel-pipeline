@@ -1,0 +1,20 @@
+name: Trigger on excel-prod.xlsx Change
+
+on:
+  push:
+    paths:
+      - 'excel-prod.xlsx'
+  pull_request:
+    paths:
+      - 'excel-prod.xlsx'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Your Action for excel-prod.xlsx
+        run: |
+          echo "A change was made to excel-prod.xlsx!"
