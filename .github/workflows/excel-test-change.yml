@@ -1,0 +1,20 @@
+name: Trigger on excel-test.xlsx Change
+
+on:
+  push:
+    paths:
+      - 'excel-test.xlsx'
+  pull_request:
+    paths:
+      - 'excel-test.xlsx'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Your Action for excel-test.xlsx
+        run: |
+          echo "A change was made to excel-test.xlsx!"
